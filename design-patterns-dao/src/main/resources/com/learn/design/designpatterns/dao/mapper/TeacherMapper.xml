@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.learn.design.designpatterns.dao.mapper.TeacherMapper">
+    <resultMap id="BaseResultMap" type="com.learn.design.designpatterns.dao.domain.TeacherBean">
+        <result column="id" property="id"/>
+        <result column="tec_name" property="tecName"/>
+        <result column="tec_age" property="tecAge"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, tec_name, tec_age
+    </sql>
+
+    <select id="getTeacherById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List" />
+        from teacher
+        where id = #{id}
+    </select>
+</mapper>

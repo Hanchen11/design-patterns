@@ -9,10 +9,15 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.learn.design</groupId>
-    <artifactId>design-patterns</artifactId>
+    <artifactId>design-patterns-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>design-patterns</name>
-    <description>design patterns</description>
+
+    <modules>
+        <module>design-patterns-dao</module>
+        <module>design-patterns-api</module>
+        <module>design-patterns-core</module>
+    </modules>
 
     <properties>
         <java.version>1.8</java.version>
@@ -44,6 +49,18 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.15</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.7</version>
         </dependency>
     </dependencies>
 
